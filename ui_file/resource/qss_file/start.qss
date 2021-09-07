@@ -1,0 +1,86 @@
+/*设置登录窗口的大小*/
+QWidget#LoginWidget{
+	width: 640px;
+	height: 440px;
+}
+/*设置背景图片大小和样式*/
+#LoginWidget #label_background{
+	width: 640px;
+	height: 440px;
+	background-image:url(data/images/login/back.png);
+}
+/*设置软件名称的字体样式*/
+QLabel#label_title
+{
+font:bold 21pt;
+color:#ffffff;
+background:transparent;
+}
+/*设置用户名和密码输出窗口的样式*/
+#LoginWidget QLineEdit
+{
+font:14px;
+color:#000000;
+}
+
+#LoginWidget #lineEdit_loginName,#lineEdit_loginPW
+{
+width:269px;
+min-height:38px;
+border-width:0;
+border-style:outset;
+}
+
+#LoginWidget #lineEdit_loginName:hover,#lineEdit_loginPW:hover
+{
+width:269px;
+min-height:38px;
+}
+
+#LoginWidget #lineEdit_loginName:focus,#lineEdit_loginPW:focus
+{
+width:269px;
+min-height:38px;
+}
+
+/*设置关闭按钮的样式*/
+#LoginWidget #pushButton_close
+{
+width:30px;
+min-height:30px;
+background-image:url(data/images/login/close-30.png);
+border:none;
+}
+
+#LoginWidget #pushButton_close:hover
+{
+background-image:url(data/images/login/close-30-hover.png);
+border:none;
+}
+
+#LoginWidget #pushButton_close:pressed
+{
+background-image:url(data/images/login/close-30-press.png);
+border:none;
+}
+
+/*设置登录按钮的样式*/
+QPushButton#pushButton_OK
+{
+font-size:14px;
+color:#1d4181;
+border-radius:2px;
+border:1px solid #1d4181;
+background:#bbc4dc;
+}
+
+QPushButton#pushButton_OK:hover
+{
+background:#d9dde4;
+}
+
+QPushButton#pushButton_OK:pressed
+{
+color:#ffffff;
+background:#2b4d8a;
+}

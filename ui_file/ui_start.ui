@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>start</class>
+ <widget class="QWidget" name="start">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>822</width>
+    <height>593</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>智能校园防护系统主界面</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/resource/icon/resource/icon/人脸核身.png</normaloff>:/resource/icon/resource/icon/人脸核身.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/resource/img/main.jpg);</string>
+  </property>
+  <widget class="QPushButton" name="btn_face_reg">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>270</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background:white;
+border-radius:10px;
+border: 1px solid;
+border-image: white;
+}
+
+QPushButton:pressed
+{
+   background-color: rgb(0, 85, 255);
+   border-style: inset;
+   margin-top: -10px;
+   margin-bottom: -10px;
+}
+
+QPushButton:hover
+{
+background-color: rgb(0, 255, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>人脸注册</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resource_rc.qrc">
+     <normaloff>:/resource/icon/爸爸.png</normaloff>:/resource/icon/爸爸.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_face_recognition">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>330</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background:white;
+border-radius:10px;
+border: 1px solid;
+border-image: white;
+}
+
+QPushButton:pressed
+{
+   background-color: rgb(0, 85, 255);
+   border-style: inset;
+   margin-top: -10px;
+   margin-bottom: -10px;
+}
+
+QPushButton:hover
+{
+background-color: rgb(0, 255, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>开启识别</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resource_rc.qrc">
+     <normaloff>:/resource/icon/人脸核身.png</normaloff>:/resource/icon/人脸核身.png</iconset>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_exit">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>390</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background:white;
+border-radius:10px;
+border: 1px solid;
+border-image: white;
+}
+
+QPushButton:pressed
+{
+   background-color: rgb(0, 85, 255);
+   border-style: inset;
+   margin-top: -10px;
+   margin-bottom: -10px;
+}
+
+QPushButton:hover
+{
+background-color: rgb(0, 255, 255);
+}</string>
+   </property>
+   <property name="text">
+    <string>退出程序</string>
+   </property>
+   <property name="icon">
+    <iconset resource="resource_rc.qrc">
+     <normaloff>:/resource/icon/拉钩.png</normaloff>:/resource/icon/拉钩.png</iconset>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>210</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+font-size: 25px;
+font-style: italic;
+font-weight: bold;
+color: white;
+font: bold italic 25px &quot;Microsoft YaHei&quot;;
+border-image: url(:/resource/img/resource/img/reg.jpg);
+border-image: white;
+
+
+
+</string>
+   </property>
+   <property name="text">
+    <string>智能校园防御系统</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resource_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

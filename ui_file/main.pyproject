@@ -1,0 +1,3 @@
+{
+    "files": ["ui_reg.ui","resource.qrc","ui_main.ui","ui_start.ui","ui_login.ui","main.py","resource_rc.qrc"]
+}

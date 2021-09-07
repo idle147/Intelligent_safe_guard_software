@@ -1,0 +1,33 @@
+{
+    "@client_config": {
+        "soft_version": "",
+        "server_ip_add": "192.168.1.1",
+        "server_ip_port": 8080,
+        "model_save_addr": "model/",
+        "system_storage_size": 1,
+        "is_delete": 1,
+        "error_image_path": "error_image/",
+        "stu_face": "stu_face/"
+    },
+    "@baidu_api": {
+        "APP_ID": "请自行修改", 
+        "API_KEY": "请自行修改",
+        "SECRET_KEY": "请自行修改"
+    },
+    "@mysql_opt": {
+        "mysql_db": "recordDB",
+        "mysql_host": "47.98.60.15",
+        "mysql_port": 3306,
+        "mysql_user": "root",
+        "mysql_pwd": "000000",
+        "mysql_charset": "utf8"
+    },
+    "@mask_detection": {
+        "model_name": "model/train.model",
+        "IMAGE_SIZE": 150,
+        "LEARNING_RATE": 0.0001
+    },
+    "@Sqlite3": {
+        "db_file": "dataBase/error_face.db"
+    }
+}

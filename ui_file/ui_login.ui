@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>login</class>
+ <widget class="QWidget" name="login">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>424</width>
+    <height>735</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>注册界面</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/resource/img/color.jpg);
+QWidget#reg {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border: 2px solid white;		
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="2,0,8,0,5,2">
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <property name="topMargin">
+    <number>5</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_title">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei</family>
+       <pointsize>25</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+font: 85 25pt &quot;Microsoft YaHei&quot;;
+font-weight:bold;
+border-image:None;
+
+
+
+</string>
+     </property>
+     <property name="text">
+      <string>&gt;&gt; 登 陆 &lt;&lt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_cam" native="true">
+     <property name="styleSheet">
+      <string notr="true">border-image: None;
+QWidget#widget_cam {
+    border: 2px solid white;
+	border-radius: 40px;
+}
+</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>25</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>25</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_cam">
+        <property name="styleSheet">
+         <string notr="true">border-radius: 20px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget_input" native="true">
+     <property name="styleSheet">
+      <string notr="true">border-image: None;</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
+      <property name="leftMargin">
+       <number>50</number>
+      </property>
+      <property name="topMargin">
+       <number>1</number>
+      </property>
+      <property name="rightMargin">
+       <number>50</number>
+      </property>
+      <property name="bottomMargin">
+       <number>1</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>2</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0" colspan="2">
+       <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,0,0">
+        <item row="1" column="0" rowspan="2" colspan="2">
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">border-image: url(:/resource/img/Dark_人脸识别.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="btn_reget">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>-1</pointsize>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+	border-radius: 10px;
+	padding:5px;
+	text-align: center;
+	text-decoration: none;
+	font-size:14px;
+	margin: 4px 2px;
+	background-color: white;
+	color:#1d4181;
+    border:1px solid #1d4181;
+}
+QPushButton:hover 
+{
+	background-color: #008cba;
+	color: white;
+}
+QPushButton:pressed 
+{
+	margin-top: -2px;
+	margin-bottom:2px;
+	
+}
+</string>
+          </property>
+          <property name="text">
+           <string>重新捕获</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource_rc.qrc">
+            <normaloff>:/resource/icon/redo.png</normaloff>:/resource/icon/redo.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="btn_get_face">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>-1</pointsize>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+	border-radius: 10px;
+	padding:5px;
+	text-align: center;
+	text-decoration: none;
+	font-size:14px;
+	margin: 4px 2px;
+	background-color: white;
+	color:#1d4181;
+    border:1px solid #1d4181;
+}
+QPushButton:hover 
+{
+	background-color: #008cba;
+	color: white;
+}
+QPushButton:pressed 
+{
+	margin-top: -2px;
+	margin-bottom:2px;
+	
+}</string>
+          </property>
+          <property name="text">
+           <string>捕获人脸</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource_rc.qrc">
+            <normaloff>:/resource/icon/人脸识别.png</normaloff>:/resource/icon/人脸识别.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="btn_connect">
+          <property name="maximumSize">
+           <size>
+            <width>180</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+	border-radius: 10px;
+	padding:5px;
+	text-align: center;
+	text-decoration: none;
+	font-size:12px;
+	margin: 4px 2px;
+	background-color: white;
+	color:#1d4181;
+    border:1px solid black;
+}</string>
+          </property>
+          <property name="text">
+           <string>服务器连接失败!</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource_rc.qrc">
+            <normaloff>:/resource/icon/提醒,感叹号_jurassic.png</normaloff>:/resource/icon/提醒,感叹号_jurassic.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="layout_decide" stretch="0,0,0">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <property name="leftMargin">
+      <number>50</number>
+     </property>
+     <property name="rightMargin">
+      <number>50</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btn_decide">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton
+{
+font-size:16px;
+border-radius:16px;
+border:2px solid green;
+background:white;
+}
+QPushButton:hover 
+{
+	color:rgb(97, 97, 97)
+}
+QPushButton:pressed 
+{
+	margin-top: -2px;
+	margin-bottom:2px;
+	
+}</string>
+       </property>
+       <property name="text">
+        <string>确  认</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource_rc.qrc">
+         <normaloff>:/resource/icon/check-circle.png</normaloff>:/resource/icon/check-circle.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_reg">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton
+{
+font-size:16px;
+border-radius:16px;
+border:2px solid green;
+background:white;
+}
+QPushButton:hover 
+{
+	color:rgb(97, 97, 97)
+}
+QPushButton:pressed 
+{
+	margin-top: -2px;
+	margin-bottom:2px;
+	
+}</string>
+       </property>
+       <property name="text">
+        <string>注 册</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource_rc.qrc">
+         <normaloff>:/resource/icon/用户.png</normaloff>:/resource/icon/用户.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_return">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>-1</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+font-size:16px;
+border-radius:16px;
+border:2px solid green;
+background:white;
+}
+
+QPushButton:hover 
+{
+	color:rgb(97, 97, 97)
+}
+QPushButton:pressed 
+{
+	margin-top: -2px;
+	margin-bottom:2px;
+	
+}</string>
+       </property>
+       <property name="text">
+        <string>返  回</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource_rc.qrc">
+         <normaloff>:/resource/icon/返回.png</normaloff>:/resource/icon/返回.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resource_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

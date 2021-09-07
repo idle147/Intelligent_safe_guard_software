@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/qss_file/Aqua.qss</file>
+        <file>resource/qss_file/start.qss</file>
+        <file>resource/img/border.jpg</file>
+        <file>resource/img/Dark_人脸识别.png</file>
+        <file>resource/img/main.jpg</file>
+        <file>resource/img/reg.jpg</file>
+        <file>resource/icon/check-circle.png</file>
+        <file>resource/icon/login.png</file>
+        <file>resource/icon/redo.png</file>
+        <file>resource/icon/title.png</file>
+        <file>resource/icon/爸爸.png</file>
+        <file>resource/icon/返回.png</file>
+        <file>resource/icon/拉钩.png</file>
+        <file>resource/icon/人脸核身.png</file>
+        <file>resource/icon/人脸识别.png</file>
+        <file>resource/icon/图片.png</file>
+        <file>resource/icon/多云.png</file>
+        <file>resource/img/board.png</file>
+        <file>resource/icon/注册.png</file>
+        <file>resource/icon/时间.png</file>
+        <file>resource/icon/用户.png</file>
+        <file>resource/img/green.jpg</file>
+        <file>resource/img/color.jpg</file>
+        <file>resource/icon/打勾_有圈.png</file>
+        <file>resource/icon/提醒,感叹号_jurassic.png</file>
+        <file>resource/icon/switchOff.png</file>
+        <file>resource/icon/switchOffHover.png</file>
+        <file>resource/icon/switchOffPressed.png</file>
+        <file>resource/icon/switchOn.png</file>
+        <file>resource/icon/decide.png</file>
+        <file>resource/icon/导入.png</file>
+    </qresource>
+</RCC>
