@@ -32,8 +32,7 @@ class CFaceId(object):
         :param group_name:组名
         :return: 创建的结果返回给上层防撞进行处理
         """
-        res = self.aipFace.groupAdd(group_name)
-        return res
+        return self.aipFace.groupAdd(group_name)
 
     def FaceAdd(self, image, user_id, group_id='temp'):
         """
@@ -43,8 +42,7 @@ class CFaceId(object):
         :param group_id: 组名, 默认为temp
         :return: 返回添加后的结果
         """
-        result = self.aipFace.addUser(image, "BASE64", group_id, user_id)
-        return result
+        return self.aipFace.addUser(image, "BASE64", group_id, user_id)
 
     def FaceUpdate(self, image, user_id, group_id='temp'):
         """
@@ -54,8 +52,7 @@ class CFaceId(object):
         :param group_id: 组名, 默认为temp
         :return: 返回更新后的结果
         """
-        result = self.aipFace.addUser(image, "BASE64", group_id, user_id)
-        return result
+        return self.aipFace.addUser(image, "BASE64", group_id, user_id)
 
     def FaceSearch(self, image, image_type="BASE64", group_id="temp"):
         """
@@ -124,8 +121,7 @@ class CFaceId(object):
             'start': start,
             'num': num
         }
-        result = self.aipFace.getGroupUsers(group, options)
-        return result
+        return self.aipFace.getGroupUsers(group, options)
 
     def DelUser(self, uid):
         """
@@ -133,8 +129,7 @@ class CFaceId(object):
         :param uid:用户ID
         :return:删除的结果
         """
-        result = self.aipFace.deleteUser(uid)
-        return result
+        return self.aipFace.deleteUser(uid)
 
     def BodyTracking(self, image, is_init, area):
         """
@@ -145,9 +140,5 @@ class CFaceId(object):
         :return: 追踪的结果
         """
         dynamic = "true"
-        options = {}
-        options["case_id"] = 1
-        options["case_init"] = is_init
-        options["area"] = area
-        result = self.bodyCheck.bodyTracking(image, dynamic, options)
-        return result
+        options = {"case_id": 1, "case_init": is_init, "area": area}
+        return self.bodyCheck.bodyTracking(image, dynamic, options)

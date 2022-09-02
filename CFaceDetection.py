@@ -37,9 +37,7 @@ class CFaceDetection():
         rects = self.Detect(gray)
         res = []
         if len(rects) > 0:  # 大于零检测人脸
-            for x1, y1, x2, y2 in rects:
-                crop = img[y1:y2, x1:x2]
-                res.append(crop)
+            res.extend(img[y1:y2, x1:x2] for x1, y1, x2, y2 in rects)
         return res
 
     def FaceDetectionPicAndLocal(self, img, face_pic, face_local):
