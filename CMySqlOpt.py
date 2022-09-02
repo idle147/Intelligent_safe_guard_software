@@ -38,17 +38,13 @@ class CDbOpt:
             del data['select_list']
         for k, v in data.items():
             if k in where_list:
-                if where_fields == '':
-                    where_fields += f"{k}='{v}'"
-                else:
-                    where_fields += f"and {k}='{v}'"
+                where_fields += f"{k}='{v}'" if where_fields == '' else f"and {k}='{v}'"
         fields = ','.join(select_list)
 
         cursor = self.conn_mysql.cursor()
         sql = f"""select {fields} from {table} where {where_fields}"""
         cursor.execute(sql)
-        result = cursor.fetchall()
-        return result
+        return cursor.fetchall()
 
     def Db_SELECT_SQL(self, sql):
         # 获取数据字段
@@ -56,8 +52,7 @@ class CDbOpt:
         # 调用db
         cursor = self.conn_mysql.cursor()
         cursor.execute(sql)
-        result = cursor.fetchall()
-        return result
+        return cursor.fetchall()
 
     def Db_Update_SQL(self, sql):
         # 调用sql
@@ -84,16 +79,9 @@ class CDbOpt:
             del data['select_list']
         for k, v in data.items():
             if k in where_list:
-                if where_fields == '':
-                    where_fields += f"{k}='{v}'"
-                else:
-                    where_fields += f"and {k}='{v}'"
+                where_fields += f"{k}='{v}'" if where_fields == '' else f"and {k}='{v}'"
             else:
-                if fields == '':
-                    fields += f"{k}='{v}'"
-                else:
-                    fields += f", {k}='{v}'"
-
+                fields += f"{k}='{v}'" if fields == '' else f", {k}='{v}'"
         # 调用sql
         cursor = self.conn_mysql.cursor()
         sql = f"""update {table} set {fields} where {where_fields}"""
@@ -116,16 +104,13 @@ class CDbOpt:
             del data['where_list']
         if select_list != None:
             del data['select_list']
-        num = 0
-        for k, v in data.items():
+        for num, (k, v) in enumerate(data.items()):
             if num == 0:
                 where_fields += f"{k}"
                 fields += f"'{v}'"
             else:
                 where_fields += f", {k}"
                 fields += f", '{v}'"
-            num += 1
-
         cursor = self.conn_mysql.cursor()
         sql = f"""insert into {table} ({where_fields}) values({fields})"""
         try:
@@ -149,16 +134,9 @@ class CDbOpt:
         if select_list != None:
             del data['select_list']
         for k, v in data.items():
-            if fields == '':
-                fields += f"{k}='{v}'"
-            else:
-                fields += f", {k}='{v}'"
+            fields += f"{k}='{v}'" if fields == '' else f", {k}='{v}'"
             if k in where_list:
-                if where_fields == '':
-                    where_fields += f"{k}='{v}'"
-                else:
-                    where_fields += f"and {k}='{v}'"
-
+                where_fields += f"{k}='{v}'" if where_fields == '' else f"and {k}='{v}'"
         cursor = self.conn_mysql.cursor()
         sql = f"""delete from {table} where {where_fields}"""
         try:

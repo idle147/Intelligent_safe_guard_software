@@ -38,7 +38,6 @@ class CCamOpt():
         # 口罩佩戴计数器
         self.mask_num = 0
         self.no_mask_num = 0
-        pass
 
     def __del__(self):
         """
@@ -73,19 +72,18 @@ class CCamOpt():
                 return
         else:
             if self.is_start:
-                # 如果摄像头已经启动
-                if self.c_win_opt.TwoBtnMsgBox('警告', "摄像头已经启动了, 是否重新启动?", QMessageBox.Warning):
-                    self.SavePic()
-                    time.sleep(1)
-                else:
+                if not self.c_win_opt.TwoBtnMsgBox(
+                    '警告', "摄像头已经启动了, 是否重新启动?", QMessageBox.Warning
+                ):
                     return
+                self.SavePic()
+                time.sleep(1)
             cap = cv2.VideoCapture()  # 视频流
-            flag = cap.open(self.CAM_NUM)  # 参数是0，表示打开笔记本的内置摄像头，参数是视频文件路径则打开视频
-            if not flag:  # flag表示open()成不成功
+            if flag := cap.open(self.CAM_NUM):
+                cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
+            else:
                 self.c_win_opt.OneBtnMsgBox('警告', "请检查相机于电脑是否连接正确!", QMessageBox.Warning)
                 return
-            else:
-                cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
         # 标识符搁置
         self.is_exit = False
         # 判断是教室模式还是闸机模式
@@ -191,9 +189,8 @@ class CCamOpt():
             self.is_start = False
             return True
         # 如果暂停, 则进入死循环
-        while True:
-            if not self.is_stop:
-                break
+        while self.is_stop:
+            pass
 
     def BodyTracking(self):
         """
@@ -264,9 +261,8 @@ class CCamOpt():
             if flag == 5:
                 if self.LabelSetPic(label, frame, width, height, ai_switch, True):
                     break
-            else:
-                if self.LabelSetPic(label, frame, width, height, ai_switch, False):
-                    break
+            elif self.LabelSetPic(label, frame, width, height, ai_switch, False):
+                break
         self.lock.release()
         # 计数器清零
         self.mask_num = 0

@@ -36,20 +36,16 @@ class CSqliteOpt():
         try:
             if param is None:
                 self.c.execute(sql)
+            elif type(param) is list:
+                self.c.executemany(sql, param)
             else:
-                if type(param) is list:
-                    self.c.executemany(sql, param)
-                else:
-                    self.c.execute(sql, param)
+                self.c.execute(sql, param)
             count = self.db.total_changes
             self.db.commit()
         except Exception as e:
             print(e)
             return False
-        if count > 0:
-            return True
-        else:
-            return False
+        return count > 0
 
     def query(self, sql, param=None):
         """

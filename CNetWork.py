@@ -20,22 +20,16 @@ class CNetWork():
         """
         # client_id 为官网获取的AK， client_secret 为官网获取的SK
         host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id='
-        host += self.API_KEY + '&client_secret=' + self.SECRET_KEY
+        host += f'{self.API_KEY}&client_secret={self.SECRET_KEY}'
         try:
             response = requests.get(host)
-            if response.status_code == 200:
-                # 连接成功, 检查token
-                re_json = response.json()
-                if 'error' in re_json:
-                    if re_json['error_description'] == 'unknown client id':
-                        # API Key不正确
-                        return -2
-                    else:
-                        # Secret Key不正确
-                        return -3
-                return 0
-            else:
+            if response.status_code != 200:
                 return -1
+            # 连接成功, 检查token
+            re_json = response.json()
+            if 'error' in re_json:
+                return -2 if re_json['error_description'] == 'unknown client id' else -3
+            return 0
         except:
             # 网络连接问题
             return -4

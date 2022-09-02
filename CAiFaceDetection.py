@@ -86,10 +86,7 @@ class CAiFaceDetection():
         :return: 删除的结果
         """
         result = self.face.aipFace.faceDelete(user_id, self.face.group, face_token)
-        if result['error_code'] == 0:
-            return True
-        else:
-            return False
+        return result['error_code'] == 0
 
     def FaceResearch(self, image, group_name="temp"):
         """
@@ -117,13 +114,14 @@ class CAiFaceDetection():
         :param group_name: 组名
         :return: 登陆的结果
         """
-        local = []
         img_encode = cv2.imencode('.jpg', image)[1]
         image_code = str(base64.b64encode(img_encode))[2:-1]
         result = self.face.FaceMultiSearch(image_code, "BASE64", group_name)
-        if result['error_msg'] == 'SUCCESS':
-            local = result['result']['face_list'][0]['user_list'][0]['user_id']
-        return local
+        return (
+            result['result']['face_list'][0]['user_list'][0]['user_id']
+            if result['error_msg'] == 'SUCCESS'
+            else []
+        )
 
     def FaceCheck(self, frame_img, group_name="temp"):
         """
@@ -152,7 +150,7 @@ class CAiFaceDetection():
         :param is_init: 初始化
         :return: 识别的结果
         """
-        area = str(image.shape[0]) + ',' + str(image.shape[1])
+        area = f'{str(image.shape[0])},{str(image.shape[1])}'
         img_encode = cv2.imencode('.jpg', image)[1]
         image_code = base64.b64encode(img_encode)[2:-1]
         result = self.face.BodyTracking(image_code, is_init, area)
@@ -181,5 +179,4 @@ class CAiFaceDetection():
         :param group_id: 组ID
         :return: 查询的结果
         """
-        result = self.face.UserQuire(user_id, group_id=group_id)
-        return result
+        return self.face.UserQuire(user_id, group_id=group_id)

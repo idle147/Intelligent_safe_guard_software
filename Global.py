@@ -16,12 +16,9 @@ QSS = CFileOpt().readQss("ui_file/resource/qss_file/QPushbtn.qss")
 CORRECT_PIC = "ui_file/resource/icon/打勾_有圈.png"
 ERROR_PIC = "ui_file/resource/icon/提醒,感叹号_jurassic.png"
 
-# 读取配置文件
-File = open("./config/config.json", "r")
-print("读取Json文件")
-CONFIG = json.loads(File.read())
-File.close()
-
+with open("./config/config.json", "r") as File:
+    print("读取Json文件")
+    CONFIG = json.loads(File.read())
 # 基本参数设置
 LOGIN = 101
 REGISTER = 102
